@@ -63,7 +63,9 @@
     .download-icon { width: 15px; height: 15px; flex: 0 0 auto; }
     .section { display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); column-gap: var(--space-xl); padding-block: 48px 56px; border-top: 1px solid var(--line); }
     .section-heading p { margin-top: 12px; color: var(--muted); font-size: 14px; }
-    .publication-group + .publication-group { margin-top: var(--space-lg); }
+    .publications-section { grid-template-columns: minmax(0, 1fr); row-gap: 32px; }
+    .publication-groups { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg) var(--space-xl); }
+    .publication-groups::before { content: ""; position: absolute; inset-block: 0; left: 50%; width: 1px; background: var(--line); transform: translateX(-50%); }
     .group-heading { color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 7px; }
     .publication { padding-block: 23px; border-bottom: 1px solid var(--line); }
     .publication:last-child { border-bottom: 0; padding-bottom: 0; }
@@ -97,6 +99,10 @@
       .education-dates, .award-year { padding-top: 0; }
       .publication-details .separator { display: none; }
       .publication-details { flex-direction: column; }
+    }
+    @media (max-width: 760px) {
+      .publication-groups { grid-template-columns: minmax(0, 1fr); }
+      .publication-groups::before { display: none; }
     }
     @media (max-width: 620px) {
       :root { --gutter: 24px; }
@@ -184,12 +190,12 @@
 
     <!-- PUBLICATIONS: nine unique works. Keep each group in descending date order.
          Dates and submission statuses follow the source export; titles link to supplied URLs. -->
-    <section id="publications" class="section" aria-labelledby="publications-heading">
+    <section id="publications" class="section publications-section" aria-labelledby="publications-heading">
       <div class="section-heading">
         <h2 id="publications-heading">Publications</h2>
         <p>Preprints &amp; journal articles</p>
       </div>
-      <div>
+      <div class="publication-groups">
         <div class="publication-group">
           <h3 class="group-heading">Preprints</h3>
           <ol aria-label="Preprints, newest first">
