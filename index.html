@@ -70,7 +70,7 @@
     .publication { padding-block: 23px; border-bottom: 1px solid var(--line); }
     .publication:last-child { border-bottom: 0; padding-bottom: 0; }
     .publication article { display: flex; align-items: flex-start; gap: 16px; }
-    .publication-thumbnail { flex: 0 0 auto; width: 96px; height: 72px; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+    .publication-thumbnail { flex: 0 0 auto; width: 192px; height: 144px; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
     .publication-content { flex: 1; min-width: 0; }
     .publication h4 { font-size: 18px; letter-spacing: -.12px; }
     .publication h4 a { color: var(--text); text-decoration: none; }
@@ -122,8 +122,9 @@
       .section-heading p { margin-top: 6px; }
       .publication h4 { font-size: 17px; }
       .publication { padding-block: 22px; }
-      .publication article { gap: 12px; }
-      .publication-thumbnail { width: 72px; height: 54px; }
+      .publication article { flex-direction: column; gap: 12px; }
+      .publication-content { width: 100%; }
+      .publication-thumbnail { width: 144px; height: 108px; }
       .profile-links { gap: 0 21px; margin-top: 16px; }
       .contact-email { font-size: 18px; }
       :is(.education-item, .award-item) { padding-block: 22px; }
@@ -206,7 +207,7 @@
           <ol aria-label="Preprints, newest first">
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/tensor-network-nonstabilizerness.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/tensor-network-nonstabilizerness.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://arxiv.org/abs/2609.31459">Nonstabilizerness of quantum tensor network states is intractable in two dimensions</a></h4>
                 <p class="authors"><strong>Gianluca Esposito</strong>, Georgios Styliaris</p>
@@ -217,7 +218,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/mixed-state-stabilizer-entropy.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/mixed-state-stabilizer-entropy.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://doi.org/10.48550/arXiv.2606.29443">Stabilizer entropy is trustworthy for mixed states</a></h4>
                 <p class="authors"><strong>Gianluca Esposito</strong>, Michele Viscardi, Alioscia Hamma</p>
@@ -229,7 +230,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/clifford-chaos.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/clifford-chaos.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://doi.org/10.48550/arXiv.2603.29695">Probes of chaos over the Clifford group and approach to Haar values</a></h4>
                 <p class="authors">Stefano Cusumano, <strong>Gianluca Esposito</strong>, Alioscia Hamma</p>
@@ -241,7 +242,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/non-local-magic.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/non-local-magic.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://doi.org/10.48550/arXiv.2511.15576">Experimental demonstration of non-local magic in a superconducting quantum processor</a></h4>
                 <p class="authors">Halima Giovanna Ahmad, <strong>Gianluca Esposito</strong>, Viviana Stasino, Jovan Odavić, Carlo Cosenza, Alessandro Sarno, Pasquale Mastrovito, Michele Viscardi, Stefano Cusumano, Francesco Tafuri, Alioscia Hamma</p>
@@ -258,7 +259,7 @@
           <ol aria-label="Journal articles, newest first">
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/chsh-nonstabilizerness.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/chsh-nonstabilizerness.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://doi.org/10.22331/q-2026-09-21-2214">Non-stabilizerness and violations of CHSH inequalities</a></h4>
                 <p class="authors">Stefano Cusumano, Lorenzo Campos Venuti, Simone Cepollaro, Immacolata de Simone, <strong>Gianluca Esposito</strong>, Daniele Iannotti, Barbara Jasser, Jovan Odavić, Michele Viscardi, and Alioscia Hamma</p>
@@ -269,7 +270,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/random-bipartite-entropies.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/random-bipartite-entropies.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://quantum-journal.org/papers/q-2025-07-21-1797/">Entanglement and Stabilizer entropies of random bipartite pure quantum states</a></h4>
                 <p class="authors">Daniele Iannotti, <strong>Gianluca Esposito</strong>, Lorenzo Campos Venuti, Alioscia Hamma</p>
@@ -280,7 +281,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/lattice-gauge-magic.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/lattice-gauge-magic.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://www.worldscientific.com/doi/10.1142/S0219887825500033">Magic of discrete Lattice Gauge theories</a></h4>
                 <p class="authors"><strong>Gianluca Esposito</strong>, Simone Cepollaro, Luigi Cappiello, Alioscia Hamma</p>
@@ -291,7 +292,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/quantum-tetrahedra.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/quantum-tetrahedra.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://link.aps.org/doi/10.1103/PhysRevD.109.126008">Stabilizer entropy of quantum tetrahedra</a></h4>
                 <p class="authors">Simone Cepollaro, Goffredo Chirco, Gianluca Cuffaro, <strong>Gianluca Esposito</strong>, Alioscia Hamma</p>
@@ -302,7 +303,7 @@
           </li>
           <li class="publication">
             <article>
-              <img class="publication-thumbnail" src="images/publications/purity-phase-transition.png" width="96" height="72" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
+              <img class="publication-thumbnail" src="images/publications/purity-phase-transition.png" width="192" height="144" alt="" decoding="async" hidden onload="this.hidden = false" onerror="this.hidden = true">
               <div class="publication-content">
                 <h4><a href="https://link.aps.org/doi/10.1103/PhysRevA.109.032403">Phase transition in stabilizer entropy and efficient purity estimation</a></h4>
                 <p class="authors">Lorenzo Leone, Salvatore F.E. Oliviero, <strong>Gianluca Esposito</strong>, Alioscia Hamma</p>
