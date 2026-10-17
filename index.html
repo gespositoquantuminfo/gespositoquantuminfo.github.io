@@ -82,13 +82,28 @@
     .submission { margin-top: 3px; color: var(--muted); font-size: 12px; }
     .paper-link { display: inline-block; margin-top: 4px; padding-block: 5px; font-size: 13px; text-decoration: none; }
     .paper-link span { margin-left: 3px; }
-    :is(.education-item, .award-item) { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: var(--space-md); padding-block: 27px; border-bottom: 1px solid var(--line); }
-    :is(.education-item, .award-item):first-child { padding-top: 4px; }
-    :is(.education-item, .award-item):last-child { padding-bottom: 0; border-bottom: 0; }
-    .education-dates, .award-year { color: var(--muted); font-size: 13px; padding-top: 4px; }
-    :is(.education-item, .award-item) h3 { font-size: 17px; }
+    .award-item { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: var(--space-md); padding-block: 27px; border-bottom: 1px solid var(--line); }
+    .award-item:first-child { padding-top: 4px; }
+    .award-item:last-child { padding-bottom: 0; border-bottom: 0; }
+    .award-year { color: var(--muted); font-size: 13px; padding-top: 4px; }
+    .award-item h3 { font-size: 17px; }
     .institution { margin-top: 8px; font-size: 14px; }
     .supervisor, .grade { margin-top: 5px; font-size: 13px; color: var(--muted); }
+    .journey-section { grid-template-columns: minmax(0, 1fr); row-gap: 30px; }
+    .journey-track { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; padding: 24px 18px 8px; }
+    .journey-track::after { content: ""; position: absolute; z-index: 0; top: 70px; left: 12.5%; right: 12.5%; height: 2px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 16px rgba(150, 184, 223, .22); }
+    .journey-item { position: relative; z-index: 1; min-width: 0; text-align: center; }
+    .journey-years { height: 29px; margin-bottom: 8px; color: var(--text); font-size: 14px; font-weight: 600; white-space: nowrap; }
+    .journey-dot { width: 18px; height: 18px; margin: 0 auto 31px; border: 3px solid var(--accent); border-radius: 50%; background: var(--background); box-shadow: 0 0 0 3px rgba(150, 184, 223, .12), 0 0 15px rgba(150, 184, 223, .18); }
+    .journey-logo { display: flex; width: 150px; height: 108px; align-items: center; justify-content: center; margin: 0 auto 20px; padding: 19px; border: 1px solid #d9dde2; border-radius: 14px; background: #fff; box-shadow: 0 16px 38px rgba(0, 0, 0, .2); }
+    .journey-logo--unina { background: #073d69; border-color: #285b83; }
+    .journey-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .journey-item h3 { max-width: 230px; margin-inline: auto; font-size: 17px; line-height: 1.35; }
+    .journey-item h3 a { color: var(--text); text-decoration: none; }
+    .journey-item h3 a:hover { color: var(--accent); text-decoration: underline; }
+    .journey-role { max-width: 220px; margin: 7px auto 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .journey-meta { display: grid; gap: 2px; max-width: 230px; margin: 10px auto 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .journey-meta span:first-child { color: var(--text); }
     .contact-email { display: inline-block; margin-block: 1px 17px; font-size: 21px; text-decoration: none; }
     .contact-details { color: var(--muted); font-size: 15px; }
     .contact-details a { color: var(--muted); }
@@ -98,14 +113,23 @@
     @media (max-width: 900px) {
       :root { --sidebar-width: 230px; --space-xl: 40px; --gutter: 28px; }
       h1 { font-size: 32px; }
-      :is(.education-item, .award-item) { grid-template-columns: 1fr; gap: 7px; }
-      .education-dates, .award-year { padding-top: 0; }
+      .award-item { grid-template-columns: 1fr; gap: 7px; }
+      .award-year { padding-top: 0; }
       .publication-details .separator { display: none; }
       .publication-details { flex-direction: column; }
     }
     @media (max-width: 760px) {
       .publication-groups { grid-template-columns: minmax(0, 1fr); }
       .publication-groups::before { display: none; }
+      .journey-track { grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 8px 0 4px 42px; }
+      .journey-track::after { top: 8px; bottom: 4px; left: 9px; right: auto; width: 2px; height: auto; }
+      .journey-item { display: grid; grid-template-columns: 112px minmax(0, 1fr); grid-template-areas: "years years" "logo title" "logo role" "logo meta"; column-gap: 18px; align-items: start; text-align: left; }
+      .journey-years { grid-area: years; height: auto; margin-bottom: 10px; }
+      .journey-dot { position: absolute; top: 3px; left: -42px; width: 18px; height: 18px; margin: 0; }
+      .journey-logo { grid-area: logo; width: 112px; height: 82px; margin: 0; padding: 14px; border-radius: 11px; }
+      .journey-item h3 { grid-area: title; max-width: none; margin: 0 0 5px; }
+      .journey-role { grid-area: role; max-width: none; margin: 0; }
+      .journey-meta { grid-area: meta; max-width: none; margin: 7px 0 0; }
     }
     @media (max-width: 620px) {
       :root { --gutter: 24px; }
@@ -127,7 +151,7 @@
       .publication-thumbnail { width: 144px; height: 108px; }
       .profile-links { gap: 0 21px; margin-top: 16px; }
       .contact-email { font-size: 18px; }
-      :is(.education-item, .award-item) { padding-block: 22px; }
+      .award-item { padding-block: 22px; }
     }
     @media print {
       :root { --background: #fff; --text: #111; --muted: #444; --accent: #174b7b; --line: #ccc; }
@@ -138,7 +162,7 @@
       .identity { margin-bottom: 24px; }
       .portrait { width: 120px; }
       .section-heading { margin-bottom: 24px; }
-      .publication, .education-item, .award-item { break-inside: avoid; }
+      .publication, .journey-item, .award-item { break-inside: avoid; }
     }
   </style>
 </head>
@@ -151,7 +175,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li><a href="#education">Education</a></li>
+          <li><a href="#journey">Journey</a></li>
           <li><a href="#awards">Awards</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -192,6 +216,54 @@
           </li>
         </ul>
       </div>
+    </section>
+
+    <!-- ACADEMIC JOURNEY: degrees and research visits, in chronological order. -->
+    <section id="journey" class="section journey-section" aria-labelledby="journey-heading">
+      <div class="section-heading">
+        <h2 id="journey-heading">Academic Journey</h2>
+        <p>Degrees &amp; research visits</p>
+      </div>
+      <ol class="journey-track" aria-label="Academic journey, earliest first">
+        <li class="journey-item">
+          <p class="journey-years"><time datetime="2016">2016</time>–<time datetime="2019">2019</time></p>
+          <div class="journey-dot" aria-hidden="true"></div>
+          <a class="journey-logo journey-logo--unina" href="https://www.unina.it/" aria-label="University of Naples Federico II website">
+            <img src="images/institutions/unina.png" width="340" height="100" alt="University of Naples Federico II logo" decoding="async">
+          </a>
+          <h3><a href="https://www.unina.it/">University of Naples Federico II</a></h3>
+          <p class="journey-role">Bachelor’s degree in Physics</p>
+          <p class="journey-meta"><span>110 cum laude</span><span>Thesis advisor: Prof. Fedele Lizzi</span></p>
+        </li>
+        <li class="journey-item">
+          <p class="journey-years"><time datetime="2019">2019</time>–<time datetime="2023">2023</time></p>
+          <div class="journey-dot" aria-hidden="true"></div>
+          <a class="journey-logo journey-logo--unina" href="https://www.unina.it/" aria-label="University of Naples Federico II website">
+            <img src="images/institutions/unina.png" width="340" height="100" alt="University of Naples Federico II logo" decoding="async">
+          </a>
+          <h3><a href="https://www.unina.it/">University of Naples Federico II</a></h3>
+          <p class="journey-role">Master’s degree in Physics</p>
+          <p class="journey-meta"><span>110 cum laude</span><span>Thesis advisor: Prof. Alioscia Hamma</span></p>
+        </li>
+        <li class="journey-item">
+          <p class="journey-years"><time datetime="2023">2023</time>–Present</p>
+          <div class="journey-dot" aria-hidden="true"></div>
+          <a class="journey-logo" href="https://www.ssmeridionale.it/" aria-label="Scuola Superiore Meridionale website">
+            <img src="images/institutions/ssm.png" width="200" height="51" alt="Scuola Superiore Meridionale logo" decoding="async">
+          </a>
+          <h3><a href="https://www.ssmeridionale.it/">Scuola Superiore Meridionale</a></h3>
+          <p class="journey-role">PhD in Mathematical and Physical Sciences</p>
+        </li>
+        <li class="journey-item">
+          <p class="journey-years"><time datetime="2026-02">Feb</time>–<time datetime="2026-09">Sep 2026</time></p>
+          <div class="journey-dot" aria-hidden="true"></div>
+          <a class="journey-logo" href="https://www.mpq.mpg.de/en" aria-label="Max Planck Institute of Quantum Optics website">
+            <img src="images/institutions/mpq.png" width="2680" height="622" alt="Max Planck Institute of Quantum Optics logo" decoding="async">
+          </a>
+          <h3><a href="https://www.mpq.mpg.de/en">Max Planck Institute of Quantum Optics</a></h3>
+          <p class="journey-role">Visiting PhD student</p>
+        </li>
+      </ol>
     </section>
 
     <!-- PUBLICATIONS: nine unique works. Keep each group in descending date order.
@@ -316,40 +388,6 @@
           </ol>
         </div>
       </div>
-    </section>
-
-    <!-- EDUCATION: edit the three degrees below, newest first. -->
-    <section id="education" class="section" aria-labelledby="education-heading">
-      <div class="section-heading"><h2 id="education-heading">Education</h2></div>
-      <ol aria-label="Education, newest first">
-        <li class="education-item">
-          <p class="education-dates">2023–present</p>
-          <div>
-            <h3>PhD in Mathematical and Physical Sciences for Advanced Materials and Technologies</h3>
-            <p class="institution">Scuola Superiore Meridionale</p>
-            <p class="supervisor">Supervisor: Prof. Alioscia Hamma</p>
-            
-          </div>
-        </li>
-        <li class="education-item">
-          <p class="education-dates">2019–2023</p>
-          <div>
-            <h3>Master’s degree in Physics</h3>
-            <p class="institution">University of Naples Federico II</p>
-            <p class="supervisor">Supervisor: Prof. Alioscia Hamma</p>
-            <p class="grade">110 cum laude</p>
-          </div>
-        </li>
-        <li class="education-item">
-          <p class="education-dates">2016–2019</p>
-          <div>
-            <h3>Bachelor’s degree in Physics</h3>
-            <p class="institution">University of Naples Federico II</p>
-            <p class="supervisor">Supervisor: Prof. Fedele Lizzi</p>
-            <p class="grade">110 cum laude</p>
-          </div>
-        </li>
-      </ol>
     </section>
 
     <!-- AWARDS: recognitions documented in the CV, newest first. Edit entries here. -->

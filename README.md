@@ -2,6 +2,16 @@
 
 Sito statico: `index.html` e le immagini vengono pubblicati direttamente su GitHub Pages.
 
+## Loghi del percorso accademico
+
+I loghi usati nella sezione **Academic Journey** sono salvati in `images/institutions/`, così il sito non dipende da risorse esterne al caricamento della pagina.
+
+| File | Istituzione | Fonte |
+| --- | --- | --- |
+| `unina.png` | Università degli Studi di Napoli Federico II | `https://www.unina.it/o/ThemaL74GA66_3/images/logo/logo_unina.png` |
+| `ssm.png` | Scuola Superiore Meridionale | `https://www.ssmeridionale.it/wp-content/uploads/2024/02/logo_ssm.png` |
+| `mpq.png` | Max Planck Institute of Quantum Optics | `https://kim264.wwwdns.kim.uni-konstanz.de/img/logos/MPQ_trans.png` |
+
 ## Miniature delle pubblicazioni
 
 Carica le immagini nella cartella `images/publications/` usando i nomi esatti riportati qui sotto (minuscole ed estensione `.png`). Non occorre modificare l’HTML. Puoi aggiungerne anche solo alcune: se un’immagine manca o non è valida, la miniatura resta nascosta e il testo occupa lo spazio disponibile.
