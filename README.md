@@ -1,6 +1,12 @@
 # Gianluca Esposito — sito personale
 
-Sito statico: `index.html` e le immagini vengono pubblicati direttamente su GitHub Pages.
+Sito statico: `index.html`, il curriculum e le immagini vengono pubblicati direttamente su GitHub Pages.
+
+## Curriculum vitae
+
+Il link **Download CV** in `index.html` punta al file `CV_gianluca_esposito.pdf` nella directory principale del progetto. Il PDF non è incorporato nell’HTML.
+
+Per aggiornare il curriculum, sostituisci `CV_gianluca_esposito.pdf` con la nuova versione mantenendo lo stesso nome, quindi includi il file nel commit e nel push. Non occorre modificare `index.html`.
 
 ## Loghi del percorso accademico
 
@@ -51,7 +57,7 @@ Per sostituire una miniatura, sovrascrivi il file corrispondente. Per rimuoverla
 
 ## Deployment su GitHub Pages
 
-Includi nel commit e nel push sia `index.html` sia i file in `images/publications/`. Se il deployment usa un workflow che carica un artefatto, includi anche la cartella `images/` nell’artefatto insieme all’HTML. I percorsi sono relativi, senza `/` iniziale: funzionano anche quando il sito è pubblicato sotto il nome della repository (`https://utente.github.io/repository/`). Non sono necessari build, dipendenze o servizi esterni. Un piccolo gestore JavaScript mostra le immagini dopo il caricamento; se JavaScript è disabilitato, rimangono visibili tutti i testi e i link.
+Includi nel commit e nel push `index.html`, `CV_gianluca_esposito.pdf` e i file in `images/publications/`. Se il deployment usa un workflow che carica un artefatto, includi anche il PDF e la cartella `images/` nell’artefatto insieme all’HTML. I percorsi sono relativi, senza `/` iniziale: funzionano anche quando il sito è pubblicato sotto il nome della repository (`https://utente.github.io/repository/`). Non sono necessari build, dipendenze o servizi esterni. Un piccolo gestore JavaScript mostra le immagini dopo il caricamento; se JavaScript è disabilitato, rimangono visibili tutti i testi e i link.
 
 Per un’anteprima locale dalla directory del progetto:
 
